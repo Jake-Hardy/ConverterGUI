@@ -8,12 +8,6 @@ public class ConverterGUI extends JPanel implements ActionListener {
 	protected JTextArea textArea;
 	private final static String newline = "\n";
 	
-	/* This constructor create a new panel with a GridBagLayout using the super() method.  *
-	 * Next, a JTextField is instantiated, and an actionListener is added to it. Then, a   *
-	 * JTextArea is created, it is set to be un-editable, and a JScrollPane is added to it.*
-	 * Some GridBagConstraints are created, but I don't fully understand these yet, so     *
-	 * there's no documentation for these right now. textField and scrollPane are added to *
-	 * the panel.																		   */
 	public ConverterGUI() {
 		super(new GridBagLayout());
 		
@@ -36,10 +30,6 @@ public class ConverterGUI extends JPanel implements ActionListener {
 		add(scrollPane, c);
 	}
 	
-	/* This is the action that is performed when the actionListener on the text field fires.*
-	 * The listener is activated when the user hits enter after typing in the textField.    *
-	 * First, the number is retrieved from textField, and the number is parsed and stored in*
-	 * inputNumInt. 																	    */
 	public void actionPerformed(ActionEvent e) {
 		String inputNum = textField.getText();
 		String result;
@@ -82,9 +72,6 @@ public class ConverterGUI extends JPanel implements ActionListener {
 		}
 	}
 	
-	/* Create the frame for the GUI, set it to terminate the program when the window *
-	 * is closed, and adds a new instance of ConverterGUI to it. The components are  *
-	 * packed, and visibility is set to true. 										 */
 	private static void createAndShowGUI() {
 		JFrame frame = new JFrame("Binary <-> Decimal Converter");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -95,7 +82,6 @@ public class ConverterGUI extends JPanel implements ActionListener {
 		frame.setVisible(true);
 	}
 	
-	/* Check to see if the entered number is a binary number. */
 	public static boolean isBinary(int number) {
 		int numCopy = number;
 		
@@ -110,8 +96,6 @@ public class ConverterGUI extends JPanel implements ActionListener {
 		return true;
 	}
 	
-	/* Check the right-most digit for a 1, and add 1 * 2^i to the total. The number is *
-	 * divided by ten to strip the right-most digit and start over.                    */
 	public static int convertToDecimal(int number) {
 		int numCopy = number;
 		int decimalTotal = 0;
@@ -126,10 +110,6 @@ public class ConverterGUI extends JPanel implements ActionListener {
 		return decimalTotal;
 	}
 	
-	/* This could probably be done more neatly; I'll be working on this eventually. Right *
-	 * now what it does is: An 8-value array is filled with 0s. Next, it determines which *
-	 * bit-flags to turn on(change to 1), then the array is dumped in to a string, and    *
-	 * that is parsed in to an int.														  */
 	public static int convertToBinary(int number) {
 		int numCopy = number;
 		String [] binaryNumberArray = new String[8];
