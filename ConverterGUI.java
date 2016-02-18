@@ -164,7 +164,6 @@ public class ConverterGUI extends JPanel implements ActionListener {
 		return binaryNumber;
 	}
 	
-	/* Run createAndShowGUI when (I assume) the program finishes loading. */
 	public static void main(String [] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
